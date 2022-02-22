@@ -12,7 +12,7 @@ program.version(`${CLINAME}@${version}`, '-v')
     .usage('<command> [options]')
     .name(CLINAME)
 
-program.command('check git <propName>')
+program.command('check-git <propName>')
     .description('查看当前git配置用户名和邮箱')
     .action(checkGit)
 
