@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const {checkGit} = require('./actions/check-git');
+const {setGit} = require('./actions/set-git');
 const {program} = require('commander');
 const fs = require('fs')
 const path = require('path')
@@ -13,8 +14,11 @@ program.version(`${CLINAME}@${version}`, '-v')
     .name(CLINAME)
 
 program.command('check-git')
-    .description('查看当前git配置用户名和邮箱')
+    .description('查看当前仓库git配置用户名和邮箱')
     .action(checkGit)
+program.command('set-git')
+    .description('配置当前仓库git配置用户名和邮箱')
+    .action(setGit)
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`)
 program.addHelpCommand(false)
