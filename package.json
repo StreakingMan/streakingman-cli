@@ -9,7 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
-    "release&publish": "npm run release && npm publish"
+    "release:alpha": "standard-version -- --prerelease alpha",
+    "release&publish": "npm run release && npm publish",
+    "release:alpah&publish": "npm run release:alpha && npm publish"
   },
   "author": "",
   "license": "ISC",
