@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {checkGit} from "./actions/check-git";
+const {checkGit} = require('./actions/check-git');
 
 const {program} = require('commander');
 const fs = require('fs')
