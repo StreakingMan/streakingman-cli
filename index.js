@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 const {checkGit} = require('./actions/check-git');
-
 const {program} = require('commander');
 const fs = require('fs')
 const path = require('path')
-const {version} = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')).toString())
+const {version} = JSON.parse(fs.readFileSync(path.join(__dirname, './package.json')).toString())
 
 const CLINAME = 'skm'
 
