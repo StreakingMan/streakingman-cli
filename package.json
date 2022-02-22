@@ -1,6 +1,6 @@
 {
   "name": "streakingman-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "常用命令行",
   "main": "index.js",
   "bin": {
