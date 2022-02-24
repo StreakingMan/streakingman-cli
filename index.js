@@ -12,11 +12,11 @@ const { version } = JSON.parse(
 const CLINAME = 'skm';
 
 // 检查版本
-const latestVersion = execSync('npm view @tuya-fe/www-cli version');
+const latestVersion = execSync('npm view streakingman-cli version');
 const [x1, y1, z1] = latestVersion.toString().trim().split('.');
 const [x2, y2, z2] = version.split('.');
 if (!(x1 === x2 && y1 === y2 && z1 <= z2)) {
-    console.log(`发现新版本${CLINAME}@${version}，请更新`);
+    console.warn(`发现新版本${CLINAME}@${latestVersion}，请更新`);
 }
 
 program

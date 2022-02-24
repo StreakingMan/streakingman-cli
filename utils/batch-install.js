@@ -6,7 +6,7 @@ const batchInstall = (deps, { dev }) => {
         try {
             execSync(`yarn add ${dep} ${dev ? '--dev' : ''}`, { stdio: [2] });
         } catch (e) {
-            console.log(`❌ ${dep} 安装失败：${e}`);
+            console.error(`❌ ${dep} 安装失败：${e}`);
         }
     }
 };
