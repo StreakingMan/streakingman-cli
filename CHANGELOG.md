@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.3.2...v1.3.3) (2022-02-24)
+
+
+### Bug Fixes
+
+* 优化控制台输出 ([438f9ab](https://github.com/StreakingMan/streakingman-cli/commit/438f9abea2af1112aae1a90d390c176548c9878d))
+
 ### [1.3.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.3.1...v1.3.2) (2022-02-24)
 
 
