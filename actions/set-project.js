@@ -1,9 +1,11 @@
 const { execSync } = require('child_process');
 const { batchInstall } = require('../utils/batch-install');
 const { fileGenerator } = require('../utils/file-generator');
+const { checkVersion } = require('../utils/check-version');
 const inquirer = require('inquirer');
 
 const setProject = async () => {
+    checkVersion();
     const {
         hasEslintAndPrettier,
         hasCommitlintAndLintstagedAndHusky,

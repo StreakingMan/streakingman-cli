@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-const { execSync } = require('child_process');
 const { checkGit } = require('./actions/check-git');
 const { setGit } = require('./actions/set-git');
 const { setProject } = require('./actions/set-project');
@@ -10,14 +9,6 @@ const { version } = JSON.parse(
     fs.readFileSync(path.join(__dirname, './package.json')).toString()
 );
 const CLINAME = 'skm';
-
-// 检查版本
-const latestVersion = execSync('npm view streakingman-cli version');
-const [x1, y1, z1] = latestVersion.toString().trim().split('.');
-const [x2, y2, z2] = version.split('.');
-if (!(x1 === x2 && y1 === y2 && z1 <= z2)) {
-    console.warn(`发现新版本${CLINAME}@${latestVersion}，请更新`);
-}
 
 program
     .version(`${CLINAME}@${version}`, '-v')
