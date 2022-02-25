@@ -14,7 +14,8 @@ const generatorTemplateFileMap = {
     prettier: '.prettierrc.js',
 };
 
-const fileGenerator = ({ templateName }) => {
+const fileGenerator = ({ templateName, option = {} }) => {
+    const { react, ts } = option;
     const cwd = process.cwd();
     const file = path.join(
         path.join(__dirname, '../templates'),
@@ -22,6 +23,8 @@ const fileGenerator = ({ templateName }) => {
     );
     const template = fs.readFileSync(file, 'utf8');
     const data = {
+        react,
+        ts,
         generatedAt: new Date().toLocaleString(),
         version,
     };

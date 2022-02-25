@@ -6,11 +6,26 @@ const inquirer = require('inquirer');
 
 const setProject = async () => {
     checkVersion();
+    // TODO 优化配置选择方式
     const {
+        hasReact,
+        hasTypeScript,
         hasEslintAndPrettier,
         hasCommitlintAndLintstagedAndHusky,
         hasStandardVersion,
     } = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'hasReact',
+            message: '是否react项目?',
+            default: true,
+        },
+        {
+            type: 'confirm',
+            name: 'hasTypeScript',
+            message: '是否使用了typescript？',
+            default: true,
+        },
         {
             type: 'confirm',
             name: 'hasEslintAndPrettier',
@@ -42,8 +57,23 @@ const setProject = async () => {
                 dev: true,
             }
         );
+        if (hasReact) {
+            batchInstall(['eslint-plugin-react'], { dev: true });
+        }
+        if (hasTypeScript) {
+            batchInstall(
+                [
+                    '@typescript-eslint/parser',
+                    '@typescript-eslint/eslint-plugin',
+                ],
+                { dev: true }
+            );
+        }
         fileGenerator({ templateName: 'prettier' });
-        fileGenerator({ templateName: 'eslint' });
+        fileGenerator({
+            templateName: 'eslint',
+            option: { react: hasReact, ts: hasTypeScript },
+        });
         fileGenerator({ templateName: 'eslintignore' });
     }
     if (hasCommitlintAndLintstagedAndHusky) {
