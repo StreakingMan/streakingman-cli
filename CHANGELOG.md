@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.4.0...v1.4.1) (2022-02-25)
+
+
+### Bug Fixes
+
+* **set-project:** eslint默认配置node环境 ([bcb1748](https://github.com/StreakingMan/streakingman-cli/commit/bcb174858c5b6512b733ebeacda16eb54d8d8ca9))
+
 ## [1.4.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.3.3...v1.4.0) (2022-02-25)
 
 
