@@ -57,7 +57,9 @@ skm set-project
 根据需要进行选择
 
 ```
+? 是否react项目 Yes
+? 是否使用了typescript Yes
 ? 是否使用eslint+prettier Yes
-? 是否使用commitlint+lintstaged+husky? Yes
-? 是否使用standard-version管理版本号? Yes
+? 是否使用commitlint+lintstaged+husky Yes
+? 是否使用standard-version管理版本号 Yes
 ```

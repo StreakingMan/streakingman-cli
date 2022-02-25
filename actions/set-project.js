@@ -17,13 +17,13 @@ const setProject = async () => {
         {
             type: 'confirm',
             name: 'hasReact',
-            message: '是否react项目?',
+            message: '是否react项目',
             default: true,
         },
         {
             type: 'confirm',
             name: 'hasTypeScript',
-            message: '是否使用了typescript？',
+            message: '是否使用了typescript',
             default: true,
         },
         {
@@ -35,13 +35,13 @@ const setProject = async () => {
         {
             type: 'confirm',
             name: 'hasCommitlintAndLintstagedAndHusky',
-            message: '是否使用commitlint+lintstaged+husky?',
+            message: '是否使用commitlint+lintstaged+husky',
             default: true,
         },
         {
             type: 'confirm',
             name: 'hasStandardVersion',
-            message: '是否使用standard-version管理版本号?',
+            message: '是否使用standard-version管理版本号',
             default: true,
         },
     ]);
