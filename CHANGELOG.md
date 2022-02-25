@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.3.3...v1.4.0) (2022-02-25)
+
+
+### Features
+
+* **set-project:** 支持react和ts ([a625d4a](https://github.com/StreakingMan/streakingman-cli/commit/a625d4a4c738e14510b58826f3d35361a639ccc4))
+
 ### [1.3.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.3.2...v1.3.3) (2022-02-24)
 
 
