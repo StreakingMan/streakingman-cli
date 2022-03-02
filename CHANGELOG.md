@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.8](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.7...v1.5.8) (2022-03-02)
+
+
+### Bug Fixes
+
+* **docs:** 优化文档，发个版本测试action ([1f60446](https://github.com/StreakingMan/streakingman-cli/commit/1f6044603d7342445a799e411d435c6e5cf5bfda))
+
 ### [1.5.7](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.6...v1.5.7) (2022-03-02)
 
 
