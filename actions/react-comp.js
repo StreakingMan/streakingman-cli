@@ -31,6 +31,8 @@ const reactComp = async () => {
             option: { compName, CompName },
         });
     }
+
+    console.log(`📦 react组件${CompName}文件生成完毕`);
 };
 
 module.exports = {
