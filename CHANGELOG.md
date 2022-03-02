@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.0...v1.5.1) (2022-03-02)
+
+
+### Bug Fixes
+
+* **react-comp:** 脚本调用更正 ([7e64786](https://github.com/StreakingMan/streakingman-cli/commit/7e64786fbf312a184518345e116169493b38ae56))
+
 ## [1.5.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.4.1...v1.5.0) (2022-03-02)
 
 
