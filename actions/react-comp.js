@@ -14,24 +14,23 @@ const reactComp = async () => {
 
     const nameArray = compName.split('');
     nameArray[0] = nameArray[0].toLowerCase();
-    compName = nameArray.join();
+    compName = nameArray.join('');
     nameArray[0] = nameArray[0].toUpperCase();
-    const CompName = nameArray.join();
+    const CompName = nameArray.join('');
 
     execSync(`mkdir ${CompName}`);
-    execSync(`cd ${CompName}`);
-    fileGenerator({
-        templateName: 'reactCompIndex',
-        option: { compName, CompName },
-    });
-    fileGenerator({
-        templateName: 'reactCompInterface',
-        option: { compName, CompName },
-    });
-    fileGenerator({
-        templateName: 'reactCompStyle',
-        option: { compName, CompName },
-    });
+
+    for (const templateName of [
+        'reactCompIndex',
+        'reactCompInterface',
+        'reactCompStyle',
+    ]) {
+        fileGenerator({
+            templateName,
+            path: CompName,
+            option: { compName, CompName },
+        });
+    }
 };
 
 module.exports = {

@@ -17,7 +17,7 @@ const generatorTemplateFileMap = {
     reactCompInterface: 'interface.ts',
 };
 
-const fileGenerator = ({ templateName, option = {} }) => {
+const fileGenerator = ({ templateName, path = '/', option = {} }) => {
     const { react, ts, compName, CompName } = option;
     const cwd = process.cwd();
     const file = path.join(
@@ -36,7 +36,10 @@ const fileGenerator = ({ templateName, option = {} }) => {
 
     const filename = generatorTemplateFileMap[templateName];
 
-    fse.outputFileSync(path.join(cwd, filename), ejs.render(template, data));
+    fse.outputFileSync(
+        path.join(path.join(cwd, path), filename),
+        ejs.render(template, data)
+    );
 
     // 格式化生成配置文件
     if (filename.endsWith('.js')) {
