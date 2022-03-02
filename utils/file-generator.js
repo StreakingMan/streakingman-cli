@@ -17,7 +17,7 @@ const generatorTemplateFileMap = {
     reactCompInterface: 'interface.ts',
 };
 
-const fileGenerator = ({ templateName, path = '/', option = {} }) => {
+const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
     const { react, ts, compName, CompName } = option;
     const cwd = process.cwd();
     const file = path.join(
@@ -37,7 +37,7 @@ const fileGenerator = ({ templateName, path = '/', option = {} }) => {
     const filename = generatorTemplateFileMap[templateName];
 
     fse.outputFileSync(
-        path.join(path.join(cwd, path), filename),
+        path.join(path.join(cwd, pathName), filename),
         ejs.render(template, data)
     );
 
