@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.2...v1.5.3) (2022-03-02)
+
+
+### Bug Fixes
+
+* **react-comp:** 文件夹创建命令 ([8f8a5ba](https://github.com/StreakingMan/streakingman-cli/commit/8f8a5ba442685494c3311e7e0adc870a7306cff6))
+
 ### [1.5.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.1...v1.5.2) (2022-03-02)
 
 
