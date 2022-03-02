@@ -63,3 +63,46 @@ skm set-project
 ? 是否使用commitlint+lintstaged+husky Yes
 ? 是否使用standard-version管理版本号 Yes
 ```
+
+### react-comp
+
+快速生成react组件相关文件
+包含组件、样式以及类型声明
+
+```
+skm set-project
+
+? 请输入组件名 (MyComp)
+```
+
+生成文件如下
+
+index.tsc
+```
+
+import React, { FC } from 'react'
+import classNames from 'classnames'
+import style from './index.module.scss'
+import MyCompProps from './interface'
+
+const MyComp: FC< MyCompProps > = () => {
+    return <div className={classnames(style.myComp)}}"></div>
+}
+
+export default MyComp
+```
+
+index.module.scss
+```
+.myComp {
+    //
+}
+```
+
+interface.ts
+```
+export interface MyCompProps {
+    className?: string
+}
+```
+

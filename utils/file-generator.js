@@ -12,10 +12,13 @@ const generatorTemplateFileMap = {
     eslintignore: '.eslintignore',
     lintstaged: '.lintstagedrc.js',
     prettier: '.prettierrc.js',
+    reactCompIndex: 'index.tsx',
+    reactCompStyle: 'index.module.scss',
+    reactCompInterface: 'interface.ts',
 };
 
 const fileGenerator = ({ templateName, option = {} }) => {
-    const { react, ts } = option;
+    const { react, ts, compName } = option;
     const cwd = process.cwd();
     const file = path.join(
         path.join(__dirname, '../templates'),
@@ -28,6 +31,15 @@ const fileGenerator = ({ templateName, option = {} }) => {
         generatedAt: new Date().toLocaleString(),
         version,
     };
+
+    if (compName) {
+        const nameArray = compName.split('');
+        nameArray[0] = nameArray[0].toLowerCase();
+        data.compName = nameArray.join();
+        nameArray[0] = nameArray[0].toUpperCase();
+        data.CompName = nameArray.join();
+    }
+
     const filename = generatorTemplateFileMap[templateName];
 
     fse.outputFileSync(path.join(cwd, filename), ejs.render(template, data));
