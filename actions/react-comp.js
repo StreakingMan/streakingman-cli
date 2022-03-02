@@ -12,8 +12,8 @@ const reactComp = async () => {
         },
     ]);
 
-    execSync(`touch ${name}`);
-    execSync(`cd ${name}`);
+    execSync(`touch ${compName}`);
+    execSync(`cd ${compName}`);
     fileGenerator({
         templateName: 'reactCompIndex',
         option: { compName },
