@@ -18,7 +18,7 @@ const generatorTemplateFileMap = {
 };
 
 const fileGenerator = ({ templateName, option = {} }) => {
-    const { react, ts, compName } = option;
+    const { react, ts, compName, CompName } = option;
     const cwd = process.cwd();
     const file = path.join(
         path.join(__dirname, '../templates'),
@@ -30,15 +30,9 @@ const fileGenerator = ({ templateName, option = {} }) => {
         ts,
         generatedAt: new Date().toLocaleString(),
         version,
+        compName,
+        CompName,
     };
-
-    if (compName) {
-        const nameArray = compName.split('');
-        nameArray[0] = nameArray[0].toLowerCase();
-        data.compName = nameArray.join();
-        nameArray[0] = nameArray[0].toUpperCase();
-        data.CompName = nameArray.join();
-    }
 
     const filename = generatorTemplateFileMap[templateName];
 

@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const { fileGenerator } = require('../utils/file-generator');
 
 const reactComp = async () => {
-    const { compName } = await inquirer.prompt([
+    let { compName } = await inquirer.prompt([
         {
             type: 'input',
             name: 'compName',
@@ -12,19 +12,25 @@ const reactComp = async () => {
         },
     ]);
 
-    execSync(`touch ${compName}`);
-    execSync(`cd ${compName}`);
+    const nameArray = compName.split('');
+    nameArray[0] = nameArray[0].toLowerCase();
+    compName = nameArray.join();
+    nameArray[0] = nameArray[0].toUpperCase();
+    const CompName = nameArray.join();
+
+    execSync(`mkdir ${CompName}`);
+    execSync(`cd ${CompName}`);
     fileGenerator({
         templateName: 'reactCompIndex',
-        option: { compName },
+        option: { compName, CompName },
     });
     fileGenerator({
         templateName: 'reactCompInterface',
-        option: { compName },
+        option: { compName, CompName },
     });
     fileGenerator({
         templateName: 'reactCompStyle',
-        option: { compName },
+        option: { compName, CompName },
     });
 };
 
