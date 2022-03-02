@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.6](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.5...v1.5.6) (2022-03-02)
+
+
+### Bug Fixes
+
+* **templates:** 修复reactIndex模版语法错误 ([1e168fd](https://github.com/StreakingMan/streakingman-cli/commit/1e168fd7ff43859d5084be136aed8fe5083d4440))
+
 ### [1.5.5](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.4...v1.5.5) (2022-03-02)
 
 
