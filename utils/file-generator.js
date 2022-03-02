@@ -41,9 +41,17 @@ const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
         ejs.render(template, data)
     );
 
+    // TODO 正则判断
     // 格式化生成配置文件
-    if (filename.endsWith('.js')) {
-        execSync(`prettier --write ${path.join(cwd, filename)}`);
+    if (
+        filename.endsWith('.js') ||
+        filename.endsWith('.jsx') ||
+        filename.endsWith('.ts') ||
+        filename.endsWith('.tsx')
+    ) {
+        execSync(
+            `prettier --write ${path.join(path.join(cwd, pathName), filename)}`
+        );
     }
 };
 

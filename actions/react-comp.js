@@ -27,7 +27,7 @@ const reactComp = async () => {
     ]) {
         fileGenerator({
             templateName,
-            path: CompName,
+            pathName: CompName,
             option: { compName, CompName },
         });
     }
