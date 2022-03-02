@@ -2,6 +2,7 @@
 const { checkGit } = require('./actions/check-git');
 const { setGit } = require('./actions/set-git');
 const { setProject } = require('./actions/set-project');
+const { reactComp } = require('./actions/react-comp');
 const { program } = require('commander');
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +32,7 @@ program
 program
     .command('react-comp')
     .description('快速生成react组件相关文件')
-    .action(setProject);
+    .action(reactComp);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
