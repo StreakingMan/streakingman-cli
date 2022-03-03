@@ -90,7 +90,7 @@ index.tsc
 import React, { FC } from 'react'
 import classNames from 'classnames'
 import style from './index.module.scss'
-import MyCompProps from './interface'
+import { MyCompProps } from './interface'
 
 const MyComp: FC< MyCompProps > = () => {
     return <div className={classnames(style.myComp)}}"></div>
