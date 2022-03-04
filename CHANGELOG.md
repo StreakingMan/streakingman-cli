@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.9...v1.6.0) (2022-03-04)
+
+
+### Features
+
+* **react-comp:** 支持子命令携带文件名参数 ([c29341c](https://github.com/StreakingMan/streakingman-cli/commit/c29341c30e9d2d0e638aa96888d8f11093531115))
+* **set-git:** 支持子命令携带名称和邮箱参数 ([545ec78](https://github.com/StreakingMan/streakingman-cli/commit/545ec786155da4636f4eb5873d288965078c2a76))
+
 ### [1.5.9](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.8...v1.5.9) (2022-03-02)
 
 ### [1.5.8](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.7...v1.5.8) (2022-03-02)
