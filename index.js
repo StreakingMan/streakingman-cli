@@ -22,7 +22,7 @@ program
     .description('查看当前仓库git配置用户名和邮箱')
     .action(checkGit);
 program
-    .command('set-git')
+    .command('set-git [name] [email]')
     .description('配置当前仓库git配置用户名和邮箱')
     .action(setGit);
 program
