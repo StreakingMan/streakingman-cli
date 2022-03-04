@@ -1,16 +1,21 @@
 const { execSync } = require('child_process');
 const inquirer = require('inquirer');
 const { fileGenerator } = require('../utils/file-generator');
+const { checkVersion } = require('../utils/check-version');
 
-const reactComp = async () => {
-    let { compName } = await inquirer.prompt([
-        {
-            type: 'input',
-            name: 'compName',
-            message: '请输入组件名',
-            default: 'MyComp',
-        },
-    ]);
+const reactComp = async (compName) => {
+    checkVersion();
+    if (!compName) {
+        let { compName: inputCompName } = await inquirer.prompt([
+            {
+                type: 'input',
+                name: 'compName',
+                message: '请输入组件名',
+                default: 'MyComp',
+            },
+        ]);
+        compName = inputCompName;
+    }
 
     const nameArray = compName.split('');
     nameArray[0] = nameArray[0].toLowerCase();

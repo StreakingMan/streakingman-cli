@@ -30,7 +30,7 @@ program
     .description('安装lint和工程化依赖以及简单配置')
     .action(setProject);
 program
-    .command('react-comp')
+    .command('react-comp [compName]')
     .description('快速生成react组件相关文件')
     .action(reactComp);
 
