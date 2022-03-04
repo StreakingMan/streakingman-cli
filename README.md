@@ -51,6 +51,15 @@ git config user.name dogEgg
 git config user.email your@email.com
 ```
 
+或者携带参数
+```
+skm set-git dogEgg your@email.com
+
+设置完成，当前配置：
+git config user.name dogEgg
+git config user.email your@email.com
+```
+
 ### set-project
 
 快捷安装 eslint,prettier,lintstaged,commitlint,husky
@@ -79,6 +88,10 @@ skm set-project
 skm set-project
 
 ? 请输入组件名 (MyComp)
+
+或者
+
+skm set-project MyComp
 ```
 
 命令将生成相应的组件文件夹，文件夹内包含文件如下
