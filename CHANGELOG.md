@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.1...v1.6.2) (2022-03-07)
+
+
+### Bug Fixes
+
+* ejs改为生产依赖 ([4a65d3b](https://github.com/StreakingMan/streakingman-cli/commit/4a65d3be10f245bc5cc856e177145bd65efc4f73))
+
 ### [1.6.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.0...v1.6.1) (2022-03-07)
 
 
