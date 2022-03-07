@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.0...v1.6.1) (2022-03-07)
+
+
+### Bug Fixes
+
+* fs-extra改为生产依赖 ([5545f60](https://github.com/StreakingMan/streakingman-cli/commit/5545f6053250f63a5ffb893f5342b67049ac2128))
+
 ## [1.6.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.5.9...v1.6.0) (2022-03-04)
 
 
