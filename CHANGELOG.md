@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.2...v1.6.3) (2022-03-07)
+
+
+### Bug Fixes
+
+* windows平台子进程执行命令报错 ([903812e](https://github.com/StreakingMan/streakingman-cli/commit/903812e4f2d66c40996bc9d24da9788bf8ea92a1))
+
 ### [1.6.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.1...v1.6.2) (2022-03-07)
 
 
