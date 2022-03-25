@@ -4,7 +4,7 @@ import style from './index.module.scss'
 import { <%- CompName %>Props } from './interface'
 
 const <%- CompName %>: FC< <%- CompName %>Props > = () => {
-    return <div className={classnames(style.<%- compName %>)}></div>
+    return <div className={classnames(style.<%- compName %>)}><%- compName %></div>
 }
 
 export default <%- CompName %>
