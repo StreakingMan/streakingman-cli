@@ -12,13 +12,14 @@ const generatorTemplateFileMap = {
     eslintignore: '.eslintignore',
     lintstaged: '.lintstagedrc.js',
     prettier: '.prettierrc.js',
+    stylelint: '.stylelintrc.js',
     reactCompIndex: 'index.tsx',
     reactCompStyle: 'index.module.scss',
     reactCompInterface: 'interface.ts',
 };
 
 const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
-    const { react, ts, compName, CompName } = option;
+    const { prettier, stylelint, react, ts, compName, CompName } = option;
     const cwd = process.cwd();
     const file = path.join(
         path.join(__dirname, '../templates'),
@@ -28,6 +29,8 @@ const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
     const data = {
         react,
         ts,
+        prettier,
+        stylelint,
         generatedAt: new Date().toLocaleString(),
         version,
         compName,

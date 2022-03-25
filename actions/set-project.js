@@ -13,6 +13,7 @@ const setProject = async () => {
         hasEslintAndPrettier,
         hasCommitlintAndLintstagedAndHusky,
         hasStandardVersion,
+        hasStylelint,
     } = await inquirer.prompt([
         {
             type: 'confirm',
@@ -30,6 +31,12 @@ const setProject = async () => {
             type: 'confirm',
             name: 'hasEslintAndPrettier',
             message: '是否使用eslint+prettier',
+            default: true,
+        },
+        {
+            type: 'confirm',
+            name: 'hasStylelint',
+            message: '是否使用stylelint(SCSS配置)',
             default: true,
         },
         {
@@ -76,6 +83,17 @@ const setProject = async () => {
         });
         fileGenerator({ templateName: 'eslintignore' });
     }
+    if (hasStylelint) {
+        const deps = ['@stylelint ', 'stylelint-config-standard-scss'];
+        if (hasEslintAndPrettier) {
+            deps.push('stylelint-config-prettier-scss');
+        }
+        batchInstall(deps, { dev: true });
+        fileGenerator({
+            templateName: 'stylelint',
+            option: { prettier: hasEslintAndPrettier },
+        });
+    }
     if (hasCommitlintAndLintstagedAndHusky) {
         batchInstall(
             [
@@ -94,7 +112,10 @@ const setProject = async () => {
             'npx husky set .husky/commit-msg "npx --no-install commitlint --edit $1"'
         );
         fileGenerator({ templateName: 'commitlint' });
-        fileGenerator({ templateName: 'lintstaged' });
+        fileGenerator({
+            templateName: 'lintstaged',
+            option: { stylelint: hasStylelint },
+        });
     }
     if (hasStandardVersion) {
         batchInstall(['standard-version'], { dev: true });

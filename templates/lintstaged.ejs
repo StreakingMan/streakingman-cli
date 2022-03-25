@@ -10,5 +10,10 @@ module.exports = {
     ],
     '*.json': [
         'prettier --write'
+    ],
+    <% if (stylelint) { %>
+    '*.{css,scss}': [
+        'stylelint --fix'
     ]
+    <% } %>
 };
