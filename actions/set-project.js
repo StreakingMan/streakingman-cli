@@ -89,9 +89,9 @@ const setProject = async () => {
         // husky安装与钩子配置
         execSync('npx husky install');
         execSync('npm set-script prepare "husky install"');
-        execSync('npx husky add .husky/pre-commit "npx lint-staged"');
+        execSync('npx husky set .husky/pre-commit "npx lint-staged"');
         execSync(
-            'npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"'
+            'npx husky set .husky/commit-msg "npx --no-install commitlint --edit $1"'
         );
         fileGenerator({ templateName: 'commitlint' });
         fileGenerator({ templateName: 'lintstaged' });
