@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.3...v1.7.0) (2022-03-25)
+
+
+### Features
+
+* **set-project:** 增加stylelint配置支持 ([2f8eac9](https://github.com/StreakingMan/streakingman-cli/commit/2f8eac9fc8ff80abf157d7ede37bf61d1abfd757))
+
+
+### Bug Fixes
+
+* **react-comp:** 模板调整 ([9c72c1e](https://github.com/StreakingMan/streakingman-cli/commit/9c72c1e04f92415d49f33147d8fb6efaa01d6cd6))
+* **set-project:** 切换 husky set 命令防止重复添加 ([b705f39](https://github.com/StreakingMan/streakingman-cli/commit/b705f3979a65922c64ec9565ad65ee3c1539609a))
+
 ### [1.6.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.2...v1.6.3) (2022-03-07)
 
 
