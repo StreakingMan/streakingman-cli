@@ -84,7 +84,7 @@ const setProject = async () => {
         fileGenerator({ templateName: 'eslintignore' });
     }
     if (hasStylelint) {
-        const deps = ['@stylelint ', 'stylelint-config-standard-scss'];
+        const deps = ['stylelint ', 'stylelint-config-standard-scss'];
         if (hasEslintAndPrettier) {
             deps.push('stylelint-config-prettier-scss');
         }
