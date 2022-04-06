@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.7.0...v1.7.1) (2022-04-06)
+
+
+### Bug Fixes
+
+* **set-project:** stylelint包名更正 ([cd78452](https://github.com/StreakingMan/streakingman-cli/commit/cd7845208ca76679894309dbcf7f2e696afec14d))
+
 ## [1.7.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.6.3...v1.7.0) (2022-03-25)
 
 
