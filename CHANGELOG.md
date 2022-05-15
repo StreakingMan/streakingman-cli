@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.8.0...v1.8.1) (2022-05-15)
+
+
+### Bug Fixes
+
+* **jekyll-md:** 生成文件名转换报错 ([a60964a](https://github.com/StreakingMan/streakingman-cli/commit/a60964ac5293b570234bdf7f0b4d26fe4936725b))
+
 ## [1.8.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.7.1...v1.8.0) (2022-05-15)
 
 
