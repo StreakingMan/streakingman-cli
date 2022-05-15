@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.7.1...v1.8.0) (2022-05-15)
+
+
+### Features
+
+* **jekyll-md:** 新增生成带front matter的markdown文件命令 ([a8b8f69](https://github.com/StreakingMan/streakingman-cli/commit/a8b8f697d204f70c0d740c47bfd934f4742fceff))
+
 ### [1.7.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.7.0...v1.7.1) (2022-04-06)
 
 
