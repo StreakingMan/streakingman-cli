@@ -32,6 +32,8 @@ const jekyllMD = async (title, category, tags) => {
         templateName: 'jekyllMarkdown',
         option: { title, category, tags },
     });
+
+    console.log(`📚 markdown文件生成完毕`);
 };
 
 module.exports = {
