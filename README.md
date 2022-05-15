@@ -18,6 +18,7 @@ yarn global add streakingman-cli
 - [set-git: 设置当前仓库 git 配置名称和邮箱](#set-git)
 - [set-project: 快速配置项目](#set-project)
 - [react-comp: 快速生成 react 组件相关文件](#react-comp)
+- [jekyll-md: 生成带front matter的markdown文件](#jekyll-md)
 
 ## 使用
 
@@ -127,3 +128,37 @@ export interface MyCompProps {
     className?: string
 }
 ```
+
+### jekyll-md
+
+```
+skm jekyll-md
+? 请输入标签 标题
+? 请输入分类 分类
+? 请输入标签（用英文逗号分隔标签）标签1,标签2,标签3
+
+或者
+
+skm jekyll-md 标题 分类 标签1,标签2,标签3
+```
+
+生成如下md文件
+
+2022-05-15-标题.md
+```
+---
+layout: post
+title: 标题
+author: Max
+categories: 分类
+tags: 标签1 标签2 标签3
+---
+
+
+generated at <%- generatedAt %> by streakingman-cli@<%- version %>
+```
+
+## TODO
+
+- [ ] 测试用例
+- [ ] 使用ts重写

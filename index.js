@@ -3,6 +3,7 @@ const { checkGit } = require('./actions/check-git');
 const { setGit } = require('./actions/set-git');
 const { setProject } = require('./actions/set-project');
 const { reactComp } = require('./actions/react-comp');
+const { jekyllMD } = require('./actions/jekyll-md');
 const { program } = require('commander');
 const fs = require('fs');
 const path = require('path');
@@ -33,6 +34,10 @@ program
     .command('react-comp [compName]')
     .description('快速生成react组件相关文件')
     .action(reactComp);
+program
+    .command('jekyll-md [title] [category] [tags]')
+    .description('生成带front matter的markdown文件')
+    .action(jekyllMD);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);

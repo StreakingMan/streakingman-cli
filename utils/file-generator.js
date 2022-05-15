@@ -5,6 +5,17 @@ const fse = require('fs-extra');
 const path = require('path');
 const ejs = require('ejs');
 
+const jekyllMarkdownName = (title) => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const date = now.getDate();
+    return `${year}-${month.padStart(2, '0')}-${date.padStart(
+        2,
+        '0'
+    )}-${title.toLowerCase()}`;
+};
+
 const generatorTemplateFileMap = {
     commitlint: '.commitlintrc.js',
     editor: '.editorconfig',
@@ -16,10 +27,21 @@ const generatorTemplateFileMap = {
     reactCompIndex: 'index.tsx',
     reactCompStyle: 'index.module.scss',
     reactCompInterface: 'interface.ts',
+    jekyllMarkdown: jekyllMarkdownName,
 };
 
 const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
-    const { prettier, stylelint, react, ts, compName, CompName } = option;
+    const {
+        prettier,
+        stylelint,
+        react,
+        ts,
+        compName,
+        CompName,
+        title,
+        category,
+        tags,
+    } = option;
     const cwd = process.cwd();
     const file = path.join(
         path.join(__dirname, '../templates'),
@@ -33,11 +55,19 @@ const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
         stylelint,
         generatedAt: new Date().toLocaleString(),
         version,
+        // react-comp
         compName,
         CompName,
+        // jekyllMarkdown
+        title,
+        category,
+        tags,
     };
 
-    const filename = generatorTemplateFileMap[templateName];
+    let filename = generatorTemplateFileMap[templateName];
+    if (typeof filename === 'function') {
+        filename = filename(title);
+    }
 
     fse.outputFileSync(
         path.join(path.join(cwd, pathName), filename),
