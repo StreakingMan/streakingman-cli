@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.3](https://github.com/StreakingMan/streakingman-cli/compare/v1.8.2...v1.8.3) (2022-07-07)
+
+
+### Bug Fixes
+
+* **set-project:** 生成文件prettier命令错误捕获 ([5ad4d92](https://github.com/StreakingMan/streakingman-cli/commit/5ad4d924a4641ccaa8a999ed1f2e9d1c371a98d7))
+
 ### [1.8.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.8.1...v1.8.2) (2022-05-15)
 
 
