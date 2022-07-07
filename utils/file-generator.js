@@ -79,9 +79,16 @@ const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
         filename.endsWith('.ts') ||
         filename.endsWith('.tsx')
     ) {
-        execSync(
-            `prettier --write ${path.join(path.join(cwd, pathName), filename)}`
-        );
+        try {
+            execSync(
+                `prettier --write ${path.join(
+                    path.join(cwd, pathName),
+                    filename
+                )}`
+            );
+        } catch (e) {
+            console.warn('prettier 命令失败');
+        }
     }
 };
 
