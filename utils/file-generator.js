@@ -1,17 +1,10 @@
 const { version } = require('../package.json');
 const { execSync } = require('child_process');
+const { jekyllMarkdownName } = require('./jekyllMarkdownName');
 const fs = require('fs');
 const fse = require('fs-extra');
 const path = require('path');
 const ejs = require('ejs');
-
-const jekyllMarkdownName = (title) => {
-    const now = new Date();
-    const year = now.getFullYear().toString();
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const date = now.getDate().toString().padStart(2, '0');
-    return `${year}-${month}-${date}-${title.toLowerCase()}.md`;
-};
 
 const generatorTemplateFileMap = {
     commitlint: '.commitlintrc.js',

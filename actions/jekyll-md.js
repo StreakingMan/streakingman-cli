@@ -1,5 +1,7 @@
 const inquirer = require('inquirer');
 const { fileGenerator } = require('../utils/file-generator');
+const { jekyllMarkdownName } = require('../utils/jekyllMarkdownName');
+const { execSync } = require('child_process');
 const jekyllMD = async (title, category, tags) => {
     if (!(title && category && tags)) {
         const { inputTitle, inputCategory, inputTags } = await inquirer.prompt([
@@ -32,6 +34,8 @@ const jekyllMD = async (title, category, tags) => {
         templateName: 'jekyllMarkdown',
         option: { title, category, tags },
     });
+
+    execSync(`git add ${jekyllMarkdownName(title)}`);
 
     console.log(`📚 markdown文件生成完毕`);
 };
