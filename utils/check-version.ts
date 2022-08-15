@@ -1,6 +1,6 @@
-const { execSync } = require('child_process');
-const { version } = require('../package.json');
-const checkVersion = () => {
+import { version } from '../package.json';
+import { execSync } from 'child_process';
+export const checkVersion: () => void = () => {
     const latestVersion = execSync('npm view streakingman-cli version')
         .toString()
         .trim();
@@ -11,8 +11,4 @@ const checkVersion = () => {
             `发现新版本 streakingman-cli@${latestVersion}，请及时更新`
         );
     }
-};
-
-module.exports = {
-    checkVersion,
 };

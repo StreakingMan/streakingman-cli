@@ -1,10 +1,10 @@
-const { execSync } = require('child_process');
-const { batchInstall } = require('../utils/batch-install');
-const { fileGenerator } = require('../utils/file-generator');
-const { checkVersion } = require('../utils/check-version');
-const inquirer = require('inquirer');
+import { checkVersion } from '../utils/check-version';
+import inquirer from 'inquirer';
+import { batchInstall } from '../utils/batch-install';
+import { execSync } from 'child_process';
+import { fileGenerator } from '../utils/file-generator';
 
-const setProject = async () => {
+export const setProject: () => void = async () => {
     checkVersion();
     // TODO 优化配置选择方式
     const {

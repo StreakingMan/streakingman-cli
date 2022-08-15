@@ -1,6 +1,13 @@
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
-const batchInstall = (deps, { dev }) => {
+type BatchInstall = (
+    deps: string[],
+    option: {
+        dev: boolean;
+    }
+) => void;
+
+export const batchInstall: BatchInstall = (deps, { dev }) => {
     for (const dep of deps) {
         console.log(`🚓 正在安装 ${dep} ...`);
         try {
@@ -9,8 +16,4 @@ const batchInstall = (deps, { dev }) => {
             console.error(`❌ ${dep} 安装失败：${e}`);
         }
     }
-};
-
-module.exports = {
-    batchInstall,
 };

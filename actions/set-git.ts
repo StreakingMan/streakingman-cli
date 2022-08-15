@@ -1,6 +1,8 @@
-const { execSync } = require('child_process');
-const inquirer = require('inquirer');
-const setGit = async (name, email) => {
+import { execSync } from 'child_process';
+import inquirer from 'inquirer';
+
+type SetGit = (name: string, email: string) => void;
+export const setGit: SetGit = async (name, email) => {
     if (!(name && email)) {
         const { name: inputName, email: inputEmail } = await inquirer.prompt([
             {
@@ -27,8 +29,4 @@ const setGit = async (name, email) => {
         `git config user.name ${execSync('git config user.name')}`.trim()
     );
     console.log(`git config user.email ${execSync('git config user.email')}`);
-};
-
-module.exports = {
-    setGit,
 };

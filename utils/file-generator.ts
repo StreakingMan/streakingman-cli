@@ -1,12 +1,25 @@
-const { version } = require('../package.json');
-const { execSync } = require('child_process');
-const { jekyllMarkdownName } = require('./jekyllMarkdownName');
-const fs = require('fs');
-const fse = require('fs-extra');
-const path = require('path');
-const ejs = require('ejs');
+import { jekyllMarkdownName } from './jekyllMarkdownName';
+import { version } from '../package.json';
+import { execSync } from 'child_process';
+import * as fs from 'fs';
+import * as fse from 'fs-extra';
+import * as path from 'path';
+import * as ejs from 'ejs';
 
-const generatorTemplateFileMap = {
+export type TemplateName =
+    | 'commitlint'
+    | 'editor'
+    | 'eslint'
+    | 'eslintignore'
+    | 'lintstaged'
+    | 'prettier'
+    | 'stylelint'
+    | 'reactCompIndex'
+    | 'reactCompStyle'
+    | 'reactCompInterface'
+    | 'jekyllMarkdown';
+
+const generatorTemplateFileMap: Record<TemplateName, any> = {
     commitlint: '.commitlintrc.js',
     editor: '.editorconfig',
     eslint: '.eslintrc.js',
@@ -20,7 +33,17 @@ const generatorTemplateFileMap = {
     jekyllMarkdown: jekyllMarkdownName,
 };
 
-const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
+type FileGenerator = (option: {
+    templateName: TemplateName;
+    pathName?: string;
+    option?: any;
+}) => void;
+
+export const fileGenerator: FileGenerator = ({
+    templateName,
+    pathName = '/',
+    option = {},
+}) => {
     const {
         prettier,
         stylelint,
@@ -83,8 +106,4 @@ const fileGenerator = ({ templateName, pathName = '/', option = {} }) => {
             console.warn('prettier 命令失败');
         }
     }
-};
-
-module.exports = {
-    fileGenerator,
 };

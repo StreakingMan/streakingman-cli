@@ -1,12 +1,12 @@
-const { execSync } = require('child_process');
-const inquirer = require('inquirer');
-const { fileGenerator } = require('../utils/file-generator');
-const { checkVersion } = require('../utils/check-version');
+import { execSync } from 'child_process';
+import inquirer from 'inquirer';
+import { checkVersion } from '../utils/check-version';
+import { fileGenerator, TemplateName } from '../utils/file-generator';
 
-const reactComp = async (compName) => {
+export const reactComp: (compName: string) => void = async (compName) => {
     checkVersion();
     if (!compName) {
-        let { compName: inputCompName } = await inquirer.prompt([
+        const { compName: inputCompName } = await inquirer.prompt([
             {
                 type: 'input',
                 name: 'compName',
@@ -29,7 +29,7 @@ const reactComp = async (compName) => {
         'reactCompIndex',
         'reactCompInterface',
         'reactCompStyle',
-    ]) {
+    ] as TemplateName[]) {
         fileGenerator({
             templateName,
             pathName: CompName,
@@ -38,8 +38,4 @@ const reactComp = async (compName) => {
     }
 
     console.log(`📦 react组件${CompName}文件生成完毕`);
-};
-
-module.exports = {
-    reactComp,
 };
