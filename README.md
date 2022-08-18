@@ -161,4 +161,5 @@ generated at <%- generatedAt %> by streakingman-cli@<%- version %>
 ## TODO
 
 - [ ] 测试用例
-- [ ] 使用ts重写
+- [x] 使用ts重写
+- [ ] 支持配置文件
