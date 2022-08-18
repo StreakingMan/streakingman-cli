@@ -5,6 +5,7 @@ import { setGit } from './actions/set-git';
 import { setProject } from './actions/set-project';
 import { reactComp } from './actions/react-comp';
 import { jekyllMD } from './actions/jekyll-md';
+import { genDaily } from './actions/gen-daily';
 const CLINAME = 'skm';
 
 program
@@ -33,6 +34,10 @@ program
     .command('jekyll-md [title] [category] [tags]')
     .description('生成带front matter的markdown文件')
     .action(jekyllMD);
+program
+    .command('gen-daily [gitUsername]')
+    .description('扫描各工程的git提交信息，自动生成日报')
+    .action(genDaily);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);

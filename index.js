@@ -10,6 +10,7 @@ var require$$0$2 = require('constants');
 var require$$0$3 = require('stream');
 var require$$4 = require('util');
 var require$$5 = require('assert');
+var promises = require('fs/promises');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -3089,6 +3090,26 @@ function __awaiter(thisArg, _arguments, P, generator) {
         function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
+}
+
+function __values(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __asyncValues(o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 }
 
 const setGit = (name, email) => __awaiter(void 0, void 0, void 0, function* () {
@@ -8288,6 +8309,38 @@ const jekyllMD = (title, category, tags) => __awaiter(void 0, void 0, void 0, fu
     console.log(`📚 markdown文件生成完毕`);
 });
 
+const genDaily = () => __awaiter(void 0, void 0, void 0, function* () {
+    var e_1, _a;
+    try {
+        const dir = yield promises.opendir('./');
+        try {
+            for (var dir_1 = __asyncValues(dir), dir_1_1; dir_1_1 = yield dir_1.next(), !dir_1_1.done;) {
+                const dirent = dir_1_1.value;
+                if (dirent.isFile()) {
+                    console.log(`${dirent.name}类型为文件，跳过`);
+                }
+                else {
+                    console.log(`${dirent.name}类型为文件夹，开始检索git提交`);
+                    process.chdir(require$$1__namespace.join('./', dirent.name));
+                    const gitMessage = require$$1.execSync('git log').toString().trim();
+                    console.log(gitMessage);
+                    process.chdir('..');
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (dir_1_1 && !dir_1_1.done && (_a = dir_1.return)) yield _a.call(dir_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+    }
+    catch (err) {
+        console.error(err);
+    }
+});
+
 const CLINAME = 'skm';
 program
     .version(`${CLINAME}@${version$1}`, '-v')
@@ -8314,6 +8367,10 @@ program
     .command('jekyll-md [title] [category] [tags]')
     .description('生成带front matter的markdown文件')
     .action(jekyllMD);
+program
+    .command('gen-daily')
+    .description('扫描各工程的git提交信息，自动生成日报')
+    .action(genDaily);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
 program.parse(process.argv);
