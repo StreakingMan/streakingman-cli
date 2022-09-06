@@ -2,7 +2,7 @@ import { opendir } from 'fs/promises';
 import * as path from 'path';
 import { execSync } from 'child_process';
 
-export const genDaily: (gitUsername: string) => void = async (gitUsername) => {
+export const genReport: (gitUsername: string) => void = async (gitUsername) => {
     try {
         const dir = await opendir('./');
         for await (const dirent of dir) {
@@ -23,7 +23,7 @@ export const genDaily: (gitUsername: string) => void = async (gitUsername) => {
                 // 输出日报
 
                 const gitMessage = execSync(
-                    `git log --pretty=format:"%s" --since=1.day --author=${gitUsername} --no-merges`
+                    `git log --pretty=format:"%s" --since=1.day --author=${gitUsername} --no-merges --all`
                 )
                     .toString()
                     .trim();

@@ -8284,9 +8284,24 @@ const jekyllMD = (title, category, tags) => __awaiter(void 0, void 0, void 0, fu
                 default: title || '',
             },
             {
-                type: 'input',
+                type: 'list',
                 name: 'inputCategory',
-                message: '请输入分类',
+                message: '请选择分类',
+                choices: [
+                    'JavaScript',
+                    'CSS',
+                    '大前端',
+                    '计算机网络',
+                    '数据结构与算法',
+                    '设计模式',
+                    '运维部署',
+                    '技术相关',
+                    '独立游戏',
+                    '工作总结',
+                    '随笔杂谈',
+                    '音乐',
+                    '绘画',
+                ],
                 default: category || '',
             },
             {
@@ -8309,7 +8324,7 @@ const jekyllMD = (title, category, tags) => __awaiter(void 0, void 0, void 0, fu
     console.log(`📚 markdown文件生成完毕`);
 });
 
-const genDaily = () => __awaiter(void 0, void 0, void 0, function* () {
+const genDaily = (gitUsername) => __awaiter(void 0, void 0, void 0, function* () {
     var e_1, _a;
     try {
         const dir = yield promises.opendir('./');
@@ -8322,7 +8337,14 @@ const genDaily = () => __awaiter(void 0, void 0, void 0, function* () {
                 else {
                     console.log(`${dirent.name}类型为文件夹，开始检索git提交`);
                     process.chdir(require$$1__namespace.join('./', dirent.name));
-                    const gitMessage = require$$1.execSync('git log').toString().trim();
+                    // 检查是否git仓库
+                    // 检查当前是否有未提交内容
+                    // 遍历分支，检索commit
+                    // 汇总，数据分类
+                    // 输出日报
+                    const gitMessage = require$$1.execSync(`git log --pretty=format:"%s" --since=1.day --author=${gitUsername} --no-merges`)
+                        .toString()
+                        .trim();
                     console.log(gitMessage);
                     process.chdir('..');
                 }
@@ -8368,7 +8390,7 @@ program
     .description('生成带front matter的markdown文件')
     .action(jekyllMD);
 program
-    .command('gen-daily')
+    .command('gen-daily [gitUsername]')
     .description('扫描各工程的git提交信息，自动生成日报')
     .action(genDaily);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
