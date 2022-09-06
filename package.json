@@ -15,11 +15,11 @@
     },
     "scripts": {
         "test": "jest",
-        "release": "standard-version",
+        "release": "standard-version --commit-all",
         "build": "rollup -c",
         "release:alpha": "standard-version -- --prerelease alpha",
-        "release&publish": "npm run release && npm publish",
-        "release:alpah&publish": "npm run release:alpha && npm publish",
+        "release&publish": "yarn release && yarn publish",
+        "release:alpah&publish": "yarn release:alpha && yarn publish",
         "prepare": "husky install"
     },
     "author": {
