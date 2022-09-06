@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.8.5";
+var version$1 = "1.9.1";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8324,7 +8324,7 @@ const jekyllMD = (title, category, tags) => __awaiter(void 0, void 0, void 0, fu
     console.log(`📚 markdown文件生成完毕`);
 });
 
-const genDaily = (gitUsername) => __awaiter(void 0, void 0, void 0, function* () {
+const genReport = (gitUsername) => __awaiter(void 0, void 0, void 0, function* () {
     var e_1, _a;
     try {
         const dir = yield promises.opendir('./');
@@ -8342,7 +8342,7 @@ const genDaily = (gitUsername) => __awaiter(void 0, void 0, void 0, function* ()
                     // 遍历分支，检索commit
                     // 汇总，数据分类
                     // 输出日报
-                    const gitMessage = require$$1.execSync(`git log --pretty=format:"%s" --since=1.day --author=${gitUsername} --no-merges`)
+                    const gitMessage = require$$1.execSync(`git log --pretty=format:"%s" --since=1.day --author=${gitUsername} --no-merges --all`)
                         .toString()
                         .trim();
                     console.log(gitMessage);
@@ -8390,9 +8390,9 @@ program
     .description('生成带front matter的markdown文件')
     .action(jekyllMD);
 program
-    .command('gen-daily [gitUsername]')
-    .description('扫描各工程的git提交信息，自动生成日报')
-    .action(genDaily);
+    .command('gen-report [gitUsername]')
+    .description('扫描各工程的git提交信息，自动工作汇报')
+    .action(genReport);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
 program.parse(process.argv);
