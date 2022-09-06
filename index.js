@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.9.1";
+var version$1 = "1.9.2";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -3161,7 +3161,7 @@ const batchInstall = (deps, { dev }) => {
     }
 };
 
-const jekyllMarkdownName = (title) => {
+const jekyllMdName = (title) => {
     const now = new Date();
     const year = now.getFullYear().toString();
     const month = (now.getMonth() + 1).toString().padStart(2, '0');
@@ -8092,12 +8092,12 @@ const generatorTemplateFileMap = {
     reactCompIndex: 'index.tsx',
     reactCompStyle: 'index.module.scss',
     reactCompInterface: 'interface.ts',
-    jekyllMarkdown: jekyllMarkdownName,
+    jekyllMarkdown: jekyllMdName,
 };
 const fileGenerator = ({ templateName, pathName = '/', option = {}, }) => {
     const { prettier, stylelint, react, ts, compName, CompName, title, category, tags, } = option;
     const cwd = process.cwd();
-    const file = require$$1__namespace.join(require$$1__namespace.join(__dirname, '../templates'), `${templateName}.ejs`);
+    const file = require$$1__namespace.join(require$$1__namespace.join(__dirname, 'templates'), `${templateName}.ejs`);
     const template = require$$0__namespace.readFileSync(file, 'utf8');
     const data = {
         react,
@@ -8320,7 +8320,7 @@ const jekyllMD = (title, category, tags) => __awaiter(void 0, void 0, void 0, fu
         templateName: 'jekyllMarkdown',
         option: { title, category, tags },
     });
-    require$$1.execSync(`git add ${jekyllMarkdownName(title)}`);
+    require$$1.execSync(`git add ${jekyllMdName(title)}`);
     console.log(`📚 markdown文件生成完毕`);
 });
 

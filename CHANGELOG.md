@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.9.1...v1.9.2) (2022-09-06)
+
+
+### Bug Fixes
+
+* **jekyll-md:** 模版路径更正 ([a1d1629](https://github.com/StreakingMan/streakingman-cli/commit/a1d1629bfec9c228834bdd972a4ce24ca5eeae28))
+
 ### [1.9.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.9.0...v1.9.1) (2022-09-06)
 
 ## [1.9.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.8.5...v1.9.0) (2022-09-06)
