@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import inquirer from 'inquirer';
-import { jekyllMarkdownName } from '../utils/jekyllMarkdownName';
+import { jekyllMdName } from '../utils/jekyll-md-name';
 import { fileGenerator } from '../utils/file-generator';
 
 type JekyllMd = (title: string, category: string, tags: string) => void;
@@ -52,7 +52,7 @@ export const jekyllMD: JekyllMd = async (title, category, tags) => {
         option: { title, category, tags },
     });
 
-    execSync(`git add ${jekyllMarkdownName(title)}`);
+    execSync(`git add ${jekyllMdName(title)}`);
 
     console.log(`📚 markdown文件生成完毕`);
 };

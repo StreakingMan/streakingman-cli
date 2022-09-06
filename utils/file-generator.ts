@@ -1,4 +1,4 @@
-import { jekyllMarkdownName } from './jekyllMarkdownName';
+import { jekyllMdName } from './jekyll-md-name';
 import { version } from '../package.json';
 import { execSync } from 'child_process';
 import * as fs from 'fs';
@@ -30,7 +30,7 @@ const generatorTemplateFileMap: Record<TemplateName, any> = {
     reactCompIndex: 'index.tsx',
     reactCompStyle: 'index.module.scss',
     reactCompInterface: 'interface.ts',
-    jekyllMarkdown: jekyllMarkdownName,
+    jekyllMarkdown: jekyllMdName,
 };
 
 type FileGenerator = (option: {
@@ -57,7 +57,7 @@ export const fileGenerator: FileGenerator = ({
     } = option;
     const cwd = process.cwd();
     const file = path.join(
-        path.join(__dirname, '../templates'),
+        path.join(__dirname, 'templates'),
         `${templateName}.ejs`
     );
     const template = fs.readFileSync(file, 'utf8');
