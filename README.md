@@ -14,11 +14,12 @@ yarn global add streakingman-cli
 
 ## 功能
 
-- [check-git: 查看当前仓库 git 配置名称和邮箱](#check-git)
-- [set-git: 设置当前仓库 git 配置名称和邮箱](#set-git)
-- [set-project: 快速配置项目](#set-project)
-- [react-comp: 快速生成 react 组件相关文件](#react-comp)
-- [jekyll-md: 生成带front matter的markdown文件](#jekyll-md)
+-   [check-git: 查看当前仓库 git 配置名称和邮箱](#check-git)
+-   [set-git: 设置当前仓库 git 配置名称和邮箱](#set-git)
+-   [set-project: 快速配置项目](#set-project)
+-   [react-comp: 快速生成 react 组件相关文件](#react-comp)
+-   [jekyll-md: 生成带 front matter 的 markdown 文件](#jekyll-md)
+-   [type-id: 对文本文件重新进行逐字输入](#type-it)
 
 ## 使用
 
@@ -53,6 +54,7 @@ git config user.email your@email.com
 ```
 
 或者携带参数
+
 ```
 skm set-git dogEgg your@email.com
 
@@ -142,9 +144,10 @@ skm jekyll-md
 skm jekyll-md 标题 分类 标签1,标签2,标签3
 ```
 
-生成如下md文件
+生成如下 md 文件
 
 2022-05-15-标题.md
+
 ```
 ---
 layout: post
@@ -158,8 +161,16 @@ tags: 标签1 标签2 标签3
 generated at <%- generatedAt %> by streakingman-cli@<%- version %>
 ```
 
+### type-id
+
+对文本文件重新进行逐字输入
+
+```shell
+Usage: skm type-it [options] [filePath] [speed] [breakBySpace]
+```
+
 ## TODO
 
-- [ ] 测试用例
-- [x] 使用ts重写
-- [ ] 支持配置文件
+-   [ ] 测试用例
+-   [x] 使用 ts 重写
+-   [ ] 支持配置文件

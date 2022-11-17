@@ -3,3 +3,4 @@
 !.commitlintrc.js
 !.lintstagedrc.js
 index.js
+index.dev.js

@@ -6,6 +6,7 @@ import { setProject } from './actions/set-project';
 import { reactComp } from './actions/react-comp';
 import { jekyllMD } from './actions/jekyll-md';
 import { genReport } from './actions/gen-report';
+import { typeIt } from './actions/type-it';
 const CLINAME = 'skm';
 
 program
@@ -38,6 +39,10 @@ program
     .command('gen-report [gitUsername]')
     .description('扫描各工程的git提交信息，自动工作汇报')
     .action(genReport);
+program
+    .command('type-it [filePath] [speed] [breakBySpace]')
+    .description('对文本文件重新进行逐字输入')
+    .action(typeIt);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
