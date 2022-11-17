@@ -16,7 +16,8 @@
     "scripts": {
         "test": "jest",
         "release": "standard-version --commit-all",
-        "build": "rollup -c",
+        "dev": "NODE_ENV=development rollup -c --watch",
+        "build": "NODE_ENV=production rollup -c",
         "release:alpha": "standard-version -- --prerelease alpha",
         "release&publish": "yarn release && yarn publish",
         "release:alpah&publish": "yarn release:alpha && yarn publish",

@@ -5,8 +5,14 @@ import typescript from '@rollup/plugin-typescript';
 
 export default {
     input: 'index.ts',
+    watch: {
+        include: ['actions/**', 'utils/**', 'index.ts'],
+    },
     output: {
-        file: 'index.js',
+        file:
+            process.env.NODE_ENV === 'development'
+                ? 'index.dev.js'
+                : 'index.js',
         format: 'cjs',
         banner: '#!/usr/bin/env node',
     },
