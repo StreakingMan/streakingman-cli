@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.9.2";
+var version$1 = "1.10.0";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8363,6 +8363,43 @@ const genReport = (gitUsername) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 
+const typeIt = (filePath, speed = '50', mode) => {
+    const _speed = Number(speed);
+    if (isNaN(_speed))
+        return console.error('speed 请输入数字');
+    if (_speed < 50)
+        return console.error('speed 请输入大于50的数字');
+    const data = lib.readFileSync(filePath).toString();
+    let dataArray = [];
+    const wordMode = mode === 'word';
+    if (wordMode) {
+        dataArray = data.split(' ');
+    }
+    else {
+        dataArray = data.split('');
+    }
+    // 合并空格
+    for (let i = 0; i < dataArray.length; i++) {
+        const space = wordMode ? '' : ' ';
+        if (dataArray[i].endsWith(space) && dataArray[i + 1] === space) {
+            dataArray[i] += ' ';
+            dataArray.splice(i + 1, 1);
+            i--;
+        }
+    }
+    lib.writeFileSync(filePath, '');
+    const timer = setInterval(() => {
+        if (!dataArray.length) {
+            clearInterval(timer);
+            return;
+        }
+        let appendString = dataArray.shift() || '';
+        if (dataArray.length && wordMode)
+            appendString += ' ';
+        lib.appendFileSync(filePath, appendString);
+    }, _speed);
+};
+
 const CLINAME = 'skm';
 program
     .version(`${CLINAME}@${version$1}`, '-v')
@@ -8393,6 +8430,10 @@ program
     .command('gen-report [gitUsername]')
     .description('扫描各工程的git提交信息，自动工作汇报')
     .action(genReport);
+program
+    .command('type-it [filePath] [speed] [breakBySpace]')
+    .description('对文本文件重新进行逐字输入')
+    .action(typeIt);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
 program.parse(process.argv);

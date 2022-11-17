@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.9.2...v1.10.0) (2022-11-17)
+
+
+### Features
+
+* **type-it:** 新增文本逐字输入命令 ([0a3a00f](https://github.com/StreakingMan/streakingman-cli/commit/0a3a00f7387b9a4daa8af061d25fb8b312d8f730))
+
 ### [1.9.2](https://github.com/StreakingMan/streakingman-cli/compare/v1.9.1...v1.9.2) (2022-09-06)
 
 
