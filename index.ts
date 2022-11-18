@@ -40,7 +40,7 @@ program
     .description('扫描各工程的git提交信息，自动工作汇报')
     .action(genReport);
 program
-    .command('type-it [filePath] [speed] [breakBySpace]')
+    .command('type-it [filePath] [speed] [mode]')
     .description('对文本文件重新进行逐字输入')
     .action(typeIt);
 
