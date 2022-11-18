@@ -19,7 +19,7 @@ yarn global add streakingman-cli
 -   [set-project: 快速配置项目](#set-project)
 -   [react-comp: 快速生成 react 组件相关文件](#react-comp)
 -   [jekyll-md: 生成带 front matter 的 markdown 文件](#jekyll-md)
--   [type-id: 对文本文件重新进行逐字输入](#type-it)
+-   [type-it: 对文本文件重新进行逐字输入](#type-it)
 
 ## 使用
 
@@ -161,13 +161,15 @@ tags: 标签1 标签2 标签3
 generated at <%- generatedAt %> by streakingman-cli@<%- version %>
 ```
 
-### type-id
+### type-it
 
 对文本文件重新进行逐字输入
 
 ```shell
 Usage: skm type-it [options] [filePath] [speed] [breakBySpace]
 ```
+
+https://user-images.githubusercontent.com/30397306/202643861-6f507cda-819b-40a0-9131-9883d9a9b978.mov
 
 ## TODO
 
