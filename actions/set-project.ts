@@ -106,7 +106,11 @@ export const setProject: () => void = async () => {
         );
         // husky安装与钩子配置
         execSync('npx husky install');
-        execSync('npm set-script prepare "husky install"');
+        try {
+            execSync('npm pkg set scripts.prepare="husky install"');
+        } catch (e) {
+            execSync('npm set-script prepare "husky install"');
+        }
         execSync('npx husky set .husky/pre-commit "npx lint-staged"');
         execSync(
             'npx husky set .husky/commit-msg "npx --no-install commitlint --edit $1"'
@@ -119,10 +123,17 @@ export const setProject: () => void = async () => {
     }
     if (hasStandardVersion) {
         batchInstall(['standard-version'], { dev: true });
-        execSync(
-            'npm set-script release:first "standard-version -- --first-release"'
-        );
-        execSync('npm set-script release "standard-version"');
+        try {
+            execSync(
+                'npm pkg set script.release:first "standard-version -- --first-release"'
+            );
+            execSync('npm pkg set script.release "standard-version"');
+        } catch (e) {
+            execSync(
+                'npm set-script release:first "standard-version -- --first-release"'
+            );
+            execSync('npm set-script release "standard-version"');
+        }
     }
     fileGenerator({ templateName: 'editor' });
     console.log('依赖安装完成，已生成基础配置');
