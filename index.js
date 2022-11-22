@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.10.0";
+var version$1 = "1.10.1";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8220,7 +8220,12 @@ const setProject = () => __awaiter(void 0, void 0, void 0, function* () {
         ], { dev: true });
         // husky安装与钩子配置
         require$$1.execSync('npx husky install');
-        require$$1.execSync('npm set-script prepare "husky install"');
+        try {
+            require$$1.execSync('npm pkg set scripts.prepare="husky install"');
+        }
+        catch (e) {
+            require$$1.execSync('npm set-script prepare "husky install"');
+        }
         require$$1.execSync('npx husky set .husky/pre-commit "npx lint-staged"');
         require$$1.execSync('npx husky set .husky/commit-msg "npx --no-install commitlint --edit $1"');
         fileGenerator({ templateName: 'commitlint' });
@@ -8231,8 +8236,14 @@ const setProject = () => __awaiter(void 0, void 0, void 0, function* () {
     }
     if (hasStandardVersion) {
         batchInstall(['standard-version'], { dev: true });
-        require$$1.execSync('npm set-script release:first "standard-version -- --first-release"');
-        require$$1.execSync('npm set-script release "standard-version"');
+        try {
+            require$$1.execSync('npm pkg set script.release:first "standard-version -- --first-release"');
+            require$$1.execSync('npm pkg set script.release "standard-version"');
+        }
+        catch (e) {
+            require$$1.execSync('npm set-script release:first "standard-version -- --first-release"');
+            require$$1.execSync('npm set-script release "standard-version"');
+        }
     }
     fileGenerator({ templateName: 'editor' });
     console.log('依赖安装完成，已生成基础配置');
@@ -8431,7 +8442,7 @@ program
     .description('扫描各工程的git提交信息，自动工作汇报')
     .action(genReport);
 program
-    .command('type-it [filePath] [speed] [breakBySpace]')
+    .command('type-it [filePath] [speed] [mode]')
     .description('对文本文件重新进行逐字输入')
     .action(typeIt);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);

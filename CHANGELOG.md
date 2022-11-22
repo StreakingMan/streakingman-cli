@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.10.0...v1.10.1) (2022-11-22)
+
+
+### Bug Fixes
+
+* **set-project:** npm set-script 命令更新 ([ec6c5e7](https://github.com/StreakingMan/streakingman-cli/commit/ec6c5e77e2e5354c765c581e00e1604384d1fa30))
+
 ## [1.10.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.9.2...v1.10.0) (2022-11-17)
 
 
