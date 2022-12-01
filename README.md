@@ -20,6 +20,7 @@ yarn global add streakingman-cli
 -   [react-comp: 快速生成 react 组件相关文件](#react-comp)
 -   [jekyll-md: 生成带 front matter 的 markdown 文件](#jekyll-md)
 -   [type-it: 对文本文件重新进行逐字输入](#type-it)
+-   [taobao-registry: 生成淘宝源npmrc文件](#taobao-registry)
 
 ## 使用
 
@@ -170,6 +171,16 @@ Usage: skm type-it [options] [filePath] [speed] [breakBySpace]
 ```
 
 https://user-images.githubusercontent.com/30397306/202643861-6f507cda-819b-40a0-9131-9883d9a9b978.mov
+
+### taobao-registry
+
+生成淘宝源npmrc文件
+
+```shell
+skm taobao-registry
+
+.npmrc生成完毕
+```
 
 ## TODO
 

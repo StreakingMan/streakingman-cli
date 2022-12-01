@@ -7,6 +7,7 @@ import { reactComp } from './actions/react-comp';
 import { jekyllMD } from './actions/jekyll-md';
 import { genReport } from './actions/gen-report';
 import { typeIt } from './actions/type-it';
+import { taobaoRegistry } from './actions/taobao-registry';
 const CLINAME = 'skm';
 
 program
@@ -43,6 +44,10 @@ program
     .command('type-it [filePath] [speed] [mode]')
     .description('对文本文件重新进行逐字输入')
     .action(typeIt);
+program
+    .command('taobao-registry')
+    .description('生成淘宝源npmrc文件')
+    .action(taobaoRegistry);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
