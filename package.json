@@ -1,6 +1,6 @@
 {
     "name": "streakingman-cli",
-    "version": "1.10.1",
+    "version": "1.11.0",
     "description": "封装了一些常用操作的命令行工具",
     "keywords": [
         "commander",

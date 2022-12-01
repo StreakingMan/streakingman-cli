@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.10.1";
+var version$1 = "1.11.0";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8411,6 +8411,11 @@ const typeIt = (filePath, speed = '50', mode) => {
     }, _speed);
 };
 
+const taobaoRegistry = () => {
+    lib.writeFileSync(require$$1__namespace.join(process.cwd(), '.npmrc'), 'registry=https://registry.npmmirror.com');
+    console.log('.npmrc生成完毕');
+};
+
 const CLINAME = 'skm';
 program
     .version(`${CLINAME}@${version$1}`, '-v')
@@ -8445,6 +8450,10 @@ program
     .command('type-it [filePath] [speed] [mode]')
     .description('对文本文件重新进行逐字输入')
     .action(typeIt);
+program
+    .command('taobao-registry')
+    .description('生成淘宝源npmrc文件')
+    .action(taobaoRegistry);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
 program.parse(process.argv);

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.10.1...v1.11.0) (2022-12-01)
+
+
+### Features
+
+* **taobao-registry:** 新增生成淘宝源npmrc文件命令 ([20a94cc](https://github.com/StreakingMan/streakingman-cli/commit/20a94cc2e95f92ec71bf0c9cfc572354ae55adf3))
+
 ### [1.10.1](https://github.com/StreakingMan/streakingman-cli/compare/v1.10.0...v1.10.1) (2022-11-22)
 
 
