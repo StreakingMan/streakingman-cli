@@ -20,7 +20,8 @@ yarn global add streakingman-cli
 -   [react-comp: 快速生成 react 组件相关文件](#react-comp)
 -   [jekyll-md: 生成带 front matter 的 markdown 文件](#jekyll-md)
 -   [type-it: 对文本文件重新进行逐字输入](#type-it)
--   [taobao-registry: 生成淘宝源npmrc文件](#taobao-registry)
+-   [taobao-registry: 生成淘宝源 npmrc 文件](#taobao-registry)
+-   [show-hosts: 查看国内常用 hosts 配置](#show-history)
 
 ## 使用
 
@@ -174,12 +175,29 @@ https://user-images.githubusercontent.com/30397306/202643861-6f507cda-819b-40a0-
 
 ### taobao-registry
 
-生成淘宝源npmrc文件
+生成淘宝源 npmrc 文件
 
 ```shell
 skm taobao-registry
 
 .npmrc生成完毕
+```
+
+### show-hosts
+
+由于某些原因，一些网站经常不好使（dns 直接被运营商屏蔽），通过这个命令查看一些常用站点得 hosts 配置
+
+```shell
+skm show-hosts
+
+# 将以下内容添加到hosts文件中，通常情况下macOS系统路径为：/etc/hosts，windows系统路径为：C:\Windows\System32\drivers\etc\hosts
+
+# 国内常用hosts，失效时可自行检查最新IP https://dnschecker.org/
+104.16.20.35 registry.npmjs.org
+104.16.20.35 registry.yarnpkg.com
+140.82.121.5 api.github.com
+140.82.121.3 github.com
+
 ```
 
 ## TODO

@@ -8,6 +8,7 @@ import { jekyllMD } from './actions/jekyll-md';
 import { genReport } from './actions/gen-report';
 import { typeIt } from './actions/type-it';
 import { taobaoRegistry } from './actions/taobao-registry';
+import { showHosts } from './actions/show-hosts';
 const CLINAME = 'skm';
 
 program
@@ -48,6 +49,10 @@ program
     .command('taobao-registry')
     .description('生成淘宝源npmrc文件')
     .action(taobaoRegistry);
+program
+    .command('show-hosts')
+    .description('查看国内常用hosts配置')
+    .action(showHosts);
 
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
