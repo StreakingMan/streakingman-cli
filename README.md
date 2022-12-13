@@ -165,13 +165,15 @@ generated at <%- generatedAt %> by streakingman-cli@<%- version %>
 
 ### type-it
 
-对文本文件重新进行逐字输入
+对文本文件重新进行逐字输入，用于一些需要装逼的场景（webstorm由于文件读取机制问题，暂不支持）
+
+```
 
 ```shell
 Usage: skm type-it [options] [filePath] [speed] [breakBySpace]
 ```
 
-https://user-images.githubusercontent.com/30397306/202643861-6f507cda-819b-40a0-9131-9883d9a9b978.mov
+![](type-it-preview.gif)
 
 ### taobao-registry
 
@@ -185,7 +187,7 @@ skm taobao-registry
 
 ### show-hosts
 
-由于某些原因，一些网站经常不好使（dns 直接被运营商屏蔽），通过这个命令查看一些常用站点得 hosts 配置
+由于某些原因，一些网站经常不好使（dns 直接被运营商屏蔽），通过这个命令查看一些常用站点的 hosts 配置
 
 ```shell
 skm show-hosts
