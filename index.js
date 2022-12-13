@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.11.0";
+var version$1 = "1.12.0";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8416,6 +8416,17 @@ const taobaoRegistry = () => {
     console.log('.npmrc生成完毕');
 };
 
+const showHosts = () => {
+    console.log(`将以下内容添加到hosts文件中，通常情况下macOS系统路径为：/etc/hosts，windows系统路径为：C:\\Windows\\System32\\drivers\\etc\\hosts
+    
+# 国内常用hosts，失效时可自行检查最新IP https://dnschecker.org/
+104.16.20.35 registry.npmjs.org
+104.16.20.35 registry.yarnpkg.com
+140.82.121.5 api.github.com
+140.82.121.3 github.com
+`);
+};
+
 const CLINAME = 'skm';
 program
     .version(`${CLINAME}@${version$1}`, '-v')
@@ -8454,6 +8465,10 @@ program
     .command('taobao-registry')
     .description('生成淘宝源npmrc文件')
     .action(taobaoRegistry);
+program
+    .command('show-hosts')
+    .description('查看国内常用hosts配置')
+    .action(showHosts);
 program.showHelpAfterError(`${CLINAME} -h 查看帮助`);
 program.addHelpCommand(false);
 program.parse(process.argv);

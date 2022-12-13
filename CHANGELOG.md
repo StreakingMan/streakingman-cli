@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.11.0...v1.12.0) (2022-12-13)
+
+
+### Features
+
+* **show-hosts:** 新增常用hosts配置查看命令 ([7e5e36f](https://github.com/StreakingMan/streakingman-cli/commit/7e5e36f877f3f4c4d1599c99836c6d732b3f3a60))
+
 ## [1.11.0](https://github.com/StreakingMan/streakingman-cli/compare/v1.10.1...v1.11.0) (2022-12-01)
 
 
