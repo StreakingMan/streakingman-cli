@@ -44,7 +44,7 @@ var require$$0__default$3 = /*#__PURE__*/_interopDefaultLegacy(require$$0$3);
 var require$$4__default = /*#__PURE__*/_interopDefaultLegacy(require$$4);
 var require$$5__default = /*#__PURE__*/_interopDefaultLegacy(require$$5);
 
-var version$1 = "1.12.0";
+var version$1 = "1.13.0";
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -8424,6 +8424,7 @@ const showHosts = () => {
 104.16.20.35 registry.yarnpkg.com
 140.82.121.5 api.github.com
 140.82.121.3 github.com
+185.199.109.133 raw.githubusercontent.com
 `);
 };
 
