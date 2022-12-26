@@ -6,5 +6,6 @@ export const showHosts: () => void = () => {
 104.16.20.35 registry.yarnpkg.com
 140.82.121.5 api.github.com
 140.82.121.3 github.com
+185.199.109.133 raw.githubusercontent.com
 `);
 };
